@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -5,10 +7,10 @@
   box-sizing: border-box;
 
   color: var(--blue-950);
+  font-family: "Rubik", system-ui, sans-serif;
 }
 
 :root {
-  font-family: system-ui, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
