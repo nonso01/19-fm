@@ -40,6 +40,15 @@ button {
   border: 2px solid transparent;
 }
 
+.btn {
+  &.blue {
+    background-color: var(--blue);
+  }
+  &.red {
+    background-color: var(--red-400);
+  }
+}
+
 .bd {
   border: 2px solid red;
 }
@@ -49,6 +58,10 @@ button {
   &.col {
     flex-direction: column;
   }
+}
+
+.hide {
+  display: none !important;
 }
 
 html {
