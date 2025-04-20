@@ -38,6 +38,7 @@ a:hover {
 button {
   outline: none;
   border: 2px solid transparent;
+  cursor: pointer;
 }
 
 .btn {
