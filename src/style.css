@@ -35,6 +35,10 @@ a:hover {
   color: #535bf2;
 }
 
+p {
+  text-wrap: balance;
+}
+
 button {
   outline: none;
   border: 2px solid transparent;
@@ -42,11 +46,16 @@ button {
 }
 
 .btn {
+  height: 50px;
+  /* width: 120px; */
+  border-radius: 0.625rem;
+  /* font-size: 1rem; */
   &.blue {
     background-color: var(--blue);
   }
   &.red {
     background-color: var(--red-400);
+    color: var(--grey-50);
   }
 }
 
@@ -56,6 +65,16 @@ button {
 
 .flex {
   display: flex;
+  &.evenly {
+    justify-content: space-evenly;
+  }
+  &.btw {
+    justify-content: space-between;
+  }
+  &.center {
+    justify-content: center;
+    align-items: center;
+  }
   &.col {
     flex-direction: column;
   }
@@ -71,4 +90,28 @@ html {
 
 body {
   min-height: inherit;
+  padding-top: max(2%, 30px);
+}
+
+header {
+  height: 4rem;
+  .bookmark-logo {
+    margin-inline-start: 10%;
+  }
+  nav {
+    width: 40%;
+    margin-inline-end: 10%;
+    align-items: center;
+    justify-content: space-between;
+    button span {
+      font-weight: bold;
+    }
+    * {
+      width: 20%;
+      text-align: center;
+      font-size: 0.9rem;
+      letter-spacing: 1.5px;
+      cursor: pointer;
+    }
+  }
 }
