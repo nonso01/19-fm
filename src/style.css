@@ -61,15 +61,21 @@ button {
 
 .btn {
   height: 50px;
-
+  border: 2px solid currentColor;
   border-radius: 0.55rem;
   &.blue {
     background-color: var(--blue);
     color: var(--grey-50);
+    border-color: var(--blue);
   }
   &.red {
     background-color: var(--red-400);
+    border-color: var(--red-400);
     color: var(--grey-50);
+  }
+  &.white  {
+    background-color: var(--grey-50);
+    border-color: var(--grey-50);
   }
   &.shadow {
     box-shadow: 0px 4px 0.5rem hsla(231, 69%, 60%, 0.389);
@@ -180,6 +186,7 @@ main {
       border-bottom-left-radius: 15rem;
     }
   }
+
   .feature {
     margin-block-start: 2%;
     height: 250px;
@@ -196,5 +203,9 @@ main {
       font-size: 1.2rem;
       width: 45%;
     }
+  }
+
+  .sec-click {
+    height: 500px;
   }
 }
