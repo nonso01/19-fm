@@ -233,7 +233,7 @@ main {
       justify-content: space-evenly;
       align-items: center;
     }
-    h3 {
+    h2 {
       font-size: 2rem;
     }
     p {
@@ -264,7 +264,7 @@ main {
         place-items: center;
         font-weight: 500;
         cursor: pointer;
-        /* border: 2px solid; */
+        border: 2px solid;
       }
 
       .scroll {
@@ -325,6 +325,18 @@ main {
       .blue-corner {
         position: absolute;
       }
+    }
+  }
+
+  .extension {
+    height: 600px;
+    .add {
+      /* border: 2px solid; */
+      align-self: center;
+      width: min(341px,18%);
+      height: 80%;
+      border-radius: 1rem;
+      box-shadow: 0px 4.5px 0.6rem hsla(231, 69%, 60%, 0.389);
     }
   }
 }
