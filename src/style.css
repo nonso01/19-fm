@@ -59,11 +59,18 @@ button {
   font-weight: 500;
 }
 
+svg,
+button,
+.txt,
+.cl,
+h3 {
+  transition: all 0.3s ease-in-out;
+}
+
 .btn {
   height: 50px;
   border: 2px solid currentColor;
   border-radius: 0.3rem;
-  transition-duration: 0.2s;
   &.blue {
     background-color: var(--blue);
     color: var(--grey-50);
@@ -360,16 +367,64 @@ main {
   align-items: center;
   justify-content: space-evenly;
   .feature {
-    width: 50%;
+    width: 40%;
     div {
-      width: 90%;
+      width: 100%;
     }
   }
   .freq {
-    min-height: 300px;
-    width: 50%;
+    min-height: 350px;
+    width: 40%;
+    cursor: pointer;
+
+    .cl {
+      display: grid;
+      grid-template-rows: 0fr;
+
+      & > p {
+        overflow: hidden;
+      }
+    }
+
+    .accord {
+      /* height: 50px; */
+      padding: 1.3rem;
+      border-color: var(--blue-100);
+      border-width: 1.9px;
+      border-style: dotted;
+      border-left-color: transparent;
+      border-right-color: transparent;
+      border-top-color: transparent;
+
+      &:first-child {
+        border-top-color: var(--blue-100);
+      }
+      &:hover {
+        h3 {
+          color: var(--red-400);
+        }
+        .cl {
+          grid-template-rows: 1fr;
+        }
+        svg path {
+          stroke: var(--red-400);
+        }
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+      h3 {
+        font-weight: normal;
+        font-size: 1.3rem;
+      }
+      p {
+        font-size: 1.2rem;
+        margin-block-start: 1%;
+      }
+    }
   }
   .b {
+    margin-block: 1%;
     width: 150px;
     height: 60px;
     .btn {
