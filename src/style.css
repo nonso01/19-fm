@@ -62,7 +62,7 @@ button {
 .btn {
   height: 50px;
   border: 2px solid currentColor;
-  border-radius: 0.55rem;
+  border-radius: 0.3rem;
   transition-duration: 0.2s;
   &.blue {
     background-color: var(--blue);
@@ -159,6 +159,26 @@ header {
   }
 }
 
+.feature {
+  margin-block: 2%;
+  height: 250px;
+  /* text-align: center; */
+  div {
+    height: 80%;
+    width: 50%;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  h2 {
+    font-size: 2.1rem;
+  }
+  p {
+    font-size: 1.2rem;
+    width: 70%;
+    text-align: center;
+  }
+}
+
 main {
   min-height: 800px;
   margin-block-start: 2%;
@@ -220,30 +240,6 @@ main {
       img {
         width: 100%;
         height: 100%;
-      }
-    }
-  }
-
-  .feature {
-    margin-block: 2%;
-    height: 250px;
-    text-align: center;
-    div {
-      height: 80%;
-      justify-content: space-evenly;
-      align-items: center;
-    }
-    h2 {
-      font-size: 2rem;
-    }
-    p {
-      font-size: 1.2rem;
-      width: 45%;
-    }
-    &:nth-child(4) {
-      /* background-color: red; */
-      p {
-        width: 55%;
       }
     }
   }
@@ -330,13 +326,56 @@ main {
 
   .extension {
     height: 600px;
+    margin-block-end: 0.5%;
+    gap: 2.5%;
     .add {
       /* border: 2px solid; */
       align-self: center;
-      width: min(341px,18%);
-      height: 80%;
-      border-radius: 1rem;
+      width: min(341px, 18%);
+      height: 75%;
+      border-radius: 0.8rem;
       box-shadow: 0px 4.5px 0.6rem hsla(231, 69%, 60%, 0.389);
+      padding-block: min(38px, 2%);
+      background-image: url("/images/bg-dots.svg");
+      background-repeat: repeat-x;
+      background-position: 1% 75%;
+      .m {
+        height: 60%;
+        align-items: center;
+      }
+      .b {
+        height: 17%;
+        .btn {
+          height: 100%;
+          width: 80%;
+        }
+      }
+    }
+  }
+}
+
+.question {
+  /* background-color: rebeccapurple; */
+  min-height: 750px;
+  align-items: center;
+  justify-content: space-evenly;
+  .feature {
+    width: 50%;
+    div {
+      width: 90%;
+    }
+  }
+  .freq {
+    min-height: 300px;
+    width: 50%;
+  }
+  .b {
+    width: 150px;
+    height: 60px;
+    .btn {
+      width: 100%;
+      height: 100%;
+      font-size: 1rem;
     }
   }
 }
