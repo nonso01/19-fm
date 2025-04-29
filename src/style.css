@@ -51,7 +51,8 @@ p {
   text-wrap: balance;
 }
 
-button {
+button,
+input {
   outline: none;
   border: 2px solid transparent;
   cursor: pointer;
@@ -65,7 +66,9 @@ button,
 .cl,
 h3,
 p,
-path {
+path,
+.error,
+label {
   transition: all 0.2s ease-in-out;
 }
 
@@ -154,8 +157,13 @@ header {
     margin-inline-end: 10%;
     align-items: center;
     justify-content: space-between;
+
     button span {
       font-weight: bold;
+    }
+
+    span:not(button span):hover {
+      color: var(--red-400);
     }
     * {
       width: 20%;
@@ -462,6 +470,71 @@ main {
       font-size: 2.5rem;
       font-weight: bold;
       width: 30%;
+    }
+  }
+
+  .div-e {
+    width: 25%;
+    /* min-height: max-content; */
+    gap: 1rem;
+    position: relative;
+
+    label {
+      width: 70%;
+      display: block;
+      height: max-content;
+      border-radius: 0.4rem;
+      position: relative;
+    }
+
+    .btn {
+      width: 30%;
+      &:hover {
+        color: var(--red-400);
+      }
+    }
+
+    input {
+      width: 100%;
+      height: 50px;
+      padding-inline: 2% 10%;
+      border-radius: 0.4rem;
+      cursor: text;
+      z-index: 2;
+    }
+
+    &:has(.error.show) {
+      label {
+        background-color: var(--red-400);
+        border: 2px solid var(--red-400);
+      }
+      
+      input {
+        background-image: url("/images/icon-error.svg");
+        background-repeat: no-repeat;
+        background-position: 98% 50%;
+      }
+      .error {
+        z-index: 0;
+        transform: translateY(0);
+      }
+    }
+
+    .error {
+      position: relative;
+
+      width: 100%;
+      height: 30px;
+      background-color: var(--red-400);
+      padding: 1% 3%;
+      transform: translateY(-100%);
+      z-index: -1;
+
+      span {
+        color: var(--grey-50);
+        font-size: 0.8rem;
+        font-style: italic;
+      }
     }
   }
 }
