@@ -1,3 +1,4 @@
+import { utils } from "animejs";
 import "./style.css";
 import {
   animate,
@@ -10,15 +11,10 @@ import {
 
 const log = console.log;
 const ONESEC = 1e3;
+const NumberJoined = { n: 0 };
 const pickOne = (el) => document.querySelector(el);
 const pickAll = (els) => document.querySelectorAll(els);
 
-// const swapBtns = pickAll(".div-swap p");
-// const stacks = pickAll(".stack");
-
-// createDraggable('.add', {
-//     container: '.extension'
-// })
 
 (function pageAnimation() {
   // blink the button dot
@@ -44,4 +40,18 @@ const pickAll = (els) => document.querySelectorAll(els);
     alternate: true,
     ease: "inOut(2)",
   });
+
+  // animate the joined numbers
+  const [$joined] = utils.$(".stay .s span");
+  animate(NumberJoined, {
+    n: 35_000,
+    duration: ONESEC * 5,
+    alternate: true,
+    loop: true,
+    modifier: utils.round(0),
+    onRender: () => {
+      $joined.innerHTML = NumberJoined.n.toLocaleString("en-US");
+    },
+  });
+
 })();

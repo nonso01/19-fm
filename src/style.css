@@ -459,9 +459,12 @@ main {
   p {
     color: var(--grey-50);
     text-align: center;
+
     span {
-      color: var(--red-400);
+      /* color: var(--red-400); */
       font-weight: bold;
+      display: inline-block;
+      min-width: 110px;
     }
     &.s {
       word-spacing: 5px;
