@@ -69,7 +69,8 @@ h3,
 p,
 path,
 .error,
-label {
+label,
+.scroll {
   transition: all 0.2s ease-in-out;
 }
 
@@ -287,17 +288,16 @@ main {
       .scroll {
         position: absolute;
         bottom: -2.8px;
-        width: 100px;
+        left: 2.5%; /* for smooth transition */
+        width: 30%;
         height: 10px;
-        border-radius: 1.5em;
+        border-radius: 0.2em;
         background-color: var(--red-400);
       }
     }
     .div-images {
       margin-block-start: 2%;
       position: relative;
-      /* background-color: var(--blue-100); */
-      /* flex: 1; */
       height: 690px;
     }
 

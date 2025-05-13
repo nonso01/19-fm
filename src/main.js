@@ -11,12 +11,29 @@ import {
 
 const log = console.log;
 const ONESEC = 1e3;
+const LeftOffsetScroll = 1.685;
 const NumberJoined = { n: 0 };
-const pickOne = (el) => document.querySelector(el);
-const pickAll = (els) => document.querySelectorAll(els);
 
+const $swap = utils.$(".div-swap p");
+const [$clickSwap] = utils.$(".sec-click .scroll");
+$swap.forEach(($swap, index) => {
+  $swap.onclick = ({ target }) => {
+    const { width, left } = target.getBoundingClientRect();
 
-(function pageAnimation() {
+    animate($clickSwap, {
+      left: left - width * LeftOffsetScroll,
+      // width: [0, width],
+      ease: "inExpo",
+      duration: ONESEC * 0.4,
+    });
+
+    log({ width, left });
+  };
+});
+
+log($swap);
+
+(function animatePage() {
   // blink the button dot
   animate("nav button.red span", {
     color: ["hsl(0, 94%, 66%)", "hsl(229, 31%, 21%)"],
@@ -53,5 +70,4 @@ const pickAll = (els) => document.querySelectorAll(els);
       $joined.innerHTML = NumberJoined.n.toLocaleString("en-US");
     },
   });
-
 })();
