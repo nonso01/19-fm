@@ -16,6 +16,13 @@ const NumberJoined = { n: 0 };
 
 const $swap = utils.$(".div-swap p");
 const [$clickSwap] = utils.$(".sec-click .scroll");
+const $stacks = utils.$(".stack");
+
+// createDraggable(".stack:not(.stack.hide-stack) img", {
+//   container: ".bk-image",
+//   scope: [0, 300],
+// });
+
 $swap.forEach(($swap, index) => {
   $swap.onclick = ({ target }) => {
     const { width, left } = target.getBoundingClientRect();
@@ -27,11 +34,31 @@ $swap.forEach(($swap, index) => {
       duration: ONESEC * 0.4,
     });
 
-    log({ width, left });
+    $stacks.forEach((stack, $index) => {
+      if (index === $index) {
+        animate(stack, {
+          translateY: "0%",
+          opacity: [0, 1],
+          duration: ONESEC * 0.3,
+          onComplete: () => {
+            stack.classList.remove("hide-stack");
+          },
+        });
+      } else {
+        animate(stack, {
+          translateY: "100%",
+          opacity: [1, 0],
+          duration: ONESEC,
+          onComplete() {
+            stack.classList.add("hide-stack");
+          },
+        });
+      }
+    });
   };
 });
 
-log($swap);
+// log(...$stacks);
 
 (function animatePage() {
   // blink the button dot
@@ -43,8 +70,8 @@ log($swap);
   });
 
   // drag the first illustration
-  createDraggable(".sb-image img", {
-    container: ".sec-sb",
+  createDraggable(".sec-sb img", {
+    container: ".sb-image",
     snap: [0, 300],
   });
 
