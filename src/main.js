@@ -56,7 +56,7 @@ $swap.forEach(($swap, index) => {
       }
     });
   };
-});
+});   
 
 // log(...$stacks);
 
