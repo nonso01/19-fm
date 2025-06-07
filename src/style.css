@@ -571,6 +571,7 @@ footer {
     margin-inline-end: 12%;
     width: min(150px, 8%);
     align-items: center;
+    cursor: pointer;
     svg path:hover {
       fill: var(--red-400);
     }
