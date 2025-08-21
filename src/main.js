@@ -1,9 +1,8 @@
-import { utils } from "animejs";
 import "./style.css";
 import {
   animate,
   createDraggable,
-  // utils,
+  utils,
   waapi,
   stagger,
   onScroll,
@@ -14,7 +13,7 @@ const ONESEC = 1e3;
 const LeftOffsetScroll = 1.685;
 const NumberJoined = { n: 0 };
 
-const $swap = utils.$(".div-swap p");
+const $swaps = utils.$(".div-swap p");
 const [$clickSwap] = utils.$(".sec-click .scroll");
 const $stacks = utils.$(".stack");
 
@@ -23,7 +22,7 @@ const $stacks = utils.$(".stack");
 //   scope: [0, 300],
 // });
 
-$swap.forEach(($swap, index) => {
+$swaps.forEach(($swap, index) => {
   $swap.onclick = ({ target }) => {
     const { width, left } = target.getBoundingClientRect();
 
@@ -48,7 +47,7 @@ $swap.forEach(($swap, index) => {
         animate(stack, {
           translateY: "100%",
           opacity: [1, 0],
-          duration: ONESEC,
+          // duration: ONESEC,
           onComplete() {
             stack.classList.add("hide-stack");
           },
@@ -64,7 +63,7 @@ $swap.forEach(($swap, index) => {
   // blink the button dot
   animate("nav button.red span", {
     color: ["hsl(0, 94%, 66%)", "hsl(229, 31%, 21%)"],
-    duration: ONESEC,
+    // duration: ONESEC,
     alternate: true,
     loop: true,
   });
@@ -94,7 +93,7 @@ $swap.forEach(($swap, index) => {
     loop: true,
     modifier: utils.round(0),
     onRender: () => {
-      $joined.innerHTML = NumberJoined.n.toLocaleString("en-US");
+      $joined.textContent = NumberJoined.n.toLocaleString("en-US");
     },
   });
 })();
